@@ -154,8 +154,11 @@ def visualization(ori_data, generated_data, analysis, compare=3000):
         # colors = ["red" for i in range(anal_sample_no)] + ["blue" for i in range(anal_sample_no)]
 
         f, ax = plt.subplots(1)
-        sns.distplot(prep_data, hist=False, kde=True, kde_kws={'linewidth': 5}, label='Original', color="red")
-        sns.distplot(prep_data_hat, hist=False, kde=True, kde_kws={'linewidth': 5, 'linestyle':'--'}, label='Synthetic', color="blue")
+        #sns.distplot(prep_data, hist=False, kde=True, kde_kws={'linewidth': 5}, label='Original', color="red")
+        #sns.distplot(prep_data_hat, hist=False, kde=True, kde_kws={'linewidth': 5, 'linestyle':'--'}, label='Synthetic', color="blue")
+        sns.displot(prep_data, kind="kde", linewidth=5, color="red", label='Original')
+        sns.displot(prep_data_hat, kind="kde", linewidth=5, linestyle='--', color="blue", label='Synthetic')
+
         # Plot formatting
 
         # plt.legend(prop={'size': 22})

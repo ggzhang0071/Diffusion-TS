@@ -45,7 +45,7 @@ dataloader:
     params:
       name: etth
       proportion: 1.0  # Set to rate < 1 if training conditional generation
-      data_root: ./Data/datasets/ETTh.csv
+      data_root: /git/datasets/ETTh.csv
       window: 24  # seq_length
       save2npy: True
       neg_one_to_one: True
@@ -57,7 +57,7 @@ dataloader:
     params:
       name: etth
       proportion: 0.9  # rate
-      data_root: ./Data/datasets/ETTh.csv
+      data_root: /git/datasets/ETTh.csv
       window: 24  # seq_length
       save2npy: True
       neg_one_to_one: True
