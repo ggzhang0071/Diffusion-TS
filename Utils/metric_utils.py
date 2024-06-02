@@ -12,7 +12,7 @@ def display_scores(results):
    mean = np.mean(results)
    sigma = scipy.stats.sem(results)
    sigma = sigma * scipy.stats.t.ppf((1 + 0.95) / 2., 5-1)
-  #  sigma = 1.96*(np.std(results)/np.sqrt(len(results)))
+  #sigma = 1.96*(np.std(results)/np.sqrt(len(results)))
    print('Final Score: ', f'{mean} \xB1 {sigma}')
 
 
@@ -70,7 +70,7 @@ def extract_time (data):
   return time, max_seq_len
 
 
-def visualization(ori_data, generated_data, analysis, compare=3000):
+def visualization(ori_data, generated_data,save_fig_name, analysis, compare=3000):
     """Using PCA or tSNE for generated and original data visualization.
   
   Args:
@@ -148,8 +148,8 @@ def visualization(ori_data, generated_data, analysis, compare=3000):
         plt.ylabel('y_tsne')
         plt.show()
 
+
     elif analysis == 'kernel':
-       
         # Visualization parameter
         # colors = ["red" for i in range(anal_sample_no)] + ["blue" for i in range(anal_sample_no)]
 
@@ -171,6 +171,8 @@ def visualization(ori_data, generated_data, analysis, compare=3000):
         # plt.ylim((0, 12))
         plt.show()
         plt.close()
+
+    plt.savefig(save_fig_name)
 
 
 if __name__ == '__main__':

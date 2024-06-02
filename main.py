@@ -67,8 +67,8 @@ def main():
     logger.save_config(config)
 
     model = instantiate_from_config(config['model']).cuda()
-    if args.sample == 1 and args.mode in ['infill', 'predict']:
-        test_dataloader_info = build_dataloader_cond(config, args)
+    #if args.sample == 1 and args.mode in ['infill', 'predict']:
+    test_dataloader_info = build_dataloader_cond(config, args)
     dataloader_info = build_dataloader(config, args)
     trainer = Trainer(config=config, args=args, model=model, dataloader=dataloader_info, logger=logger)
 

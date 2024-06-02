@@ -36,7 +36,6 @@ def Downsample(dim, dim_out=None):
 
 
 # normalization functions
-
 def normalize_to_neg_one_to_one(x):
     return x * 2 - 1
 

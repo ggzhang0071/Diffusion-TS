@@ -5,7 +5,7 @@ docker run --gpus all  --privileged=true   --workdir /git --name "diffusion_ts" 
  -v /home/ggzhang/datasets:/git/datasets \
  $img sleep infinity
 
-docker exec -it diffusion_ts /bin/bash
+docker exec -it diffusion_ts   /bin/bash
 
 #docker images  |grep "diffusion_ts"  |grep "21."
 
